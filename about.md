@@ -4,7 +4,7 @@ title: What are we doing?
 ---
 
 We are working with life sciences training communities to adapt and deliver
-existing training materials for High Throughput Sequencing (HTS) data analysis 
+existing training materials for High Throughput Sequencing (HTS) data analysis
 skills needed in genomics research.
 
 # The problem
@@ -20,7 +20,7 @@ Given their cumulative experience and expertise in training for Life Sciences, t
 
 # The solution
 
-Gallantries aims to bridge the different training communities (EMBL, The Carpentries, Galaxy, ELIXIR, GOBLET) and fill the remaining gap in bioinformatics training. 
+Gallantries aims to bridge the different training communities (EMBL, The Carpentries, Galaxy, ELIXIR, GOBLET) and fill the remaining gap in bioinformatics training.
 
 ## Development of curriculum and training material
 
@@ -42,9 +42,9 @@ To bridge these communities, collaboration fests are organized. Each one will en
 
 # Who are we?
 
-We are a group of enthousiastic people about training and community: you can find more details about us in the [team]({% link team.md %})
+We are a group of enthousiastic people about training and community.
 
-We are instructors, mentors, and contributors within the Carpentries and Galaxy Training communities. We have extensive experience and a strong commitment to producing concise and evidenced based training, while also being mindful of providing inclusive training for all involved. 
+We are instructors, mentors, and contributors within the Carpentries and Galaxy Training communities. We have extensive experience and a strong commitment to producing concise and evidenced based training, while also being mindful of providing inclusive training for all involved.
 
 We are key contributors of the Galaxy community, with clear insights on the current and future technical capabilities of the Galaxy infrastructure that is widely used particularly in training events around the globe.
 
