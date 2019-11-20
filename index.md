@@ -1,17 +1,39 @@
 ---
 layout: page
-title: FIXME (e.g. RNA-Seq Workshop)
+title: FIXME                             # (e.g. RNA-Seq Workshop)
+topics:
+  - FIXME                                # Some topics like "Galaxy Intro", "QC & Mapping"
+  - FIXME                                # Don't forget to edit the schedule below!
+contact: fixme@example.com               # Your contact email
 
+collaborative_doc: "https://example.org" # Document where collaboration happens for students (e.g. google docs or etherpad.) We've linked to an example document
+galaxy_url: https://usegalaxy.eu         # Which Galaxy server you will use
+galaxy_name: European Galaxy Server      # The name of the server
+
+organisers:
+ - FIXME                                 # The names of your organisers
+
+sponsors:
+ - FIXME                                 # The names of your sponsors
+
+site_size: 15                            # How many people you can accomodate at each location
 locations:
 -
-    name: FIXME
-    street: Wytemaweg 80
-    postal: 3015 CN
-    city: Rotterdam
-    country: The Netherlands
+    name: FIXME                                # A name like "Rotterdam", generally just the city name unless something makes more sense
+    street: Wytemaweg 80                       # Street (Freeform)
+    postal: 3015 CN                            # Post Code (Freeform)
+    city: Rotterdam                            # City name (Freeform)
+    country: The Netherlands                   # Country (Freeform)
+    registration: https://example.org/register # Replace this with your registration form
+    # Any more instructions on how to reach the location
+    instructions: |
+        The workhop will be held in room 1528 on the 15th floor of the Ee
+        building. Computers are provided in this room. To enter the building you will
+        need to pick up a visitors pass that will be waiting for you at the reception
+        of the Ee building (3rd floor).
     geo:
-        lat: 51.9108731
-        lon: 4.4690001
+        lat: 51.9108731 # Latitude in decimal degrees, used in displaying a map
+        lon: 4.4690001  # Longitude in decimal degrees, used in displaying a map
 ---
 
 From FIXME to FIXME
@@ -19,26 +41,37 @@ From FIXME to FIXME
 ## About
 
 This workshop will cover:
-- Galaxy introduction
-- Introduction to High-Throughput Sequencing and Quality Control
-- Reference-based RNA-seq data analysis
-- Basics of R programming
-- Post-processing of RNA-seq data using R and Rstudio
 
-It will be delivered simultaneously at multiple locations across Europe ([Rotterdam, NL](#rotterdam); [Thessaloniki, GR](#thessaloniki); [Tartu, EE](#tartu)).
+<ul>
+{% for topic in page.topics %}
+<li>{{ topic }}</li>
+{% endfor %}
+</ul>
 
 **Code of Conduct**: Everyone who participates in Carpentries activities is required to conform to the Code of Conduct. This document also outlines how to report an incident if needed.
 
-**Accessibility**: We are committed to making this workshop accessible to everybody. Please email FIXME@example.org for more information.
+**Accessibility**: We are committed to making this workshop accessible to everybody. Please email [{{ page.contact }}](mailto:{{ page.contact }}) for more information.
 
 # Registration
 
-Each location offers 15 places, and registration is done on a first come, first served basis.
+Each location offers {{ page.site_size }} places, and registration is done on a first come, first served basis.
 
-City         | Links
---           | ---
-FIXME, FIXME | [Register](https://forms.gle/qDJAx6s8QN9kqA9j6), [Location Information](#fixme)
-{: .table}
+<table class="table">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for location in page.locations %}
+    <tr>
+      <td>{{ location.city }}, {{ location.country }}</td>
+      <td><a href="{{ location.registration }}">Register</a>, <a href="#{{ location.name | slugify }}">Location Information</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 Registration closes at FIXME. Selected participants will be notified by FIXME.
 
@@ -49,40 +82,14 @@ Every day the workshop will run from **9:30 (CEST) / 10:30 (EEST)** to **16:30 (
 
 **Monday FIXME**
 
-Time (CEST)   | Time (EEST)   | Topic                  | Material                                                                                                                                                                                                                                                           | Speaker
- ---          | ---           | ---                    | ---                                                                                                                                                                                                                                                                | ---
-09:30 - 10:00 | 10:30 - 11:00 | General introduction   | [slides](https://training.galaxyproject.org/training-material/topics/instructors/tutorials/workshop-intro/slides.html)                                                                                                                                             | Individual Sites
-10:00 - 10:30 | 11:00 - 11:30 | Introduction to Galaxy | [slides](https://training.galaxyproject.org/training-material/topics/introduction/slides/introduction.html#1)                                                                                                                                                      |
-10:30 - 12:00 | 11:30 - 13:00 | Galaxy 101             | [tutorial](https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-101/tutorial.html)                                                                                                                                      |
-12:00 - 13:00 | 13:00 - 14:00 | Lunch                  |                                                                                                                                                                                                                                                                    |
-13:00 - 15:00 | 14:00 - 16:00 | Quality control        | [slides](https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/slides.html#1), [tutorial](https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html) |
-15:00 - 16:00 | 16:00 - 17:00 | Mapping                | [slides](https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/slides.html#1), [tutorial](https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html)                 |
-16:00 - 16:30 | 17:00 - 17:30 | Recap of the day       |                                                                                                                                                                                                                                                                    | Individual Sites
-{:.table.table-striped}
-
-**Tuesday FIXME**
-
-Time (CEST)   | Time (EEST)   | Topic                                                               | Material                                                                                                                  | Speaker
----           | ---           | ---                                                                 | ---                                                                                                                       | ---
-09:00 - 09:30 | 10:00 - 10:30 | Recap of the previous day                                           |                                                                                                                           | Individual Sites
-09:30 - 10:00 | 10:30 - 11:00 | Introduction to RNA-Seq                                             | [slides](https://training.galaxyproject.org/training-material/topics/transcriptomics/slides/introduction.html#1)          |
-10:00 - 12:30 | 11:00 - 13:30 | Reference-based RNA-seq, part I (QC + mapping)                      | [tutorial](https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/ref-based/tutorial.html) |
-12:30 - 13:30 | 13:30 - 14:30 | Lunch                                                               |                                                                                                                           |
-13:30 - 16:00 | 14:30 - 17:00 | Reference-based RNA-seq, part II (Differentail expression analysis) | [tutorial](https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/ref-based/tutorial.html) |
-16:00 - 16:30 | 17:00 - 17:30 | Recap of the workshop + feedbacks                                   |                                                                                                                           | Individual Sites
-Evening       |               | Social Dinner                                                       |                                                                                                                           | Individual Sites
-{:.table.table-striped}
-
-
-**Wednesday FIXME**
-
-Time (CEST)   | Time (EEST)   | Topic                                | Material         | Speaker
----           | ---           | ---                                  | ---              | ---
-09:30 - 10:00 | 10:30 - 11:00 | Recap of the previous day            |                  | Individual Sites
-10:00 - 12:00 | 11:00 - 13:00 | Introduction to R programming        | [tutorial](TODO) |
-12:00 - 13:00 | 13:00 - 14:00 | Lunch                                |                  |
-13:00 - 16:00 | 14:00 - 17:00 | Post-processing RNA-seq data using R | [tutorial](TODO) |
-16:00 - 16:30 | 17:00 - 17:30 | Recap of the workshop + feedbacks    |                  | Individual Sites
+Time (CEST)   | Time (EEST)   | Topic            | Material | Speaker
+ ---          | ---           | ---              | ---      | ---
+09:30 - 10:00 | 10:30 - 11:00 | Introduction     |          | Individual Sites
+10:00 - 12:00 | 11:00 - 13:00 | Session 1        |          |
+12:00 - 13:00 | 13:00 - 14:00 | Lunch            |          |
+13:00 - 14:30 | 14:00 - 15:30 | Session 2        |          |
+14:30 - 16:00 | 15:30 - 17:00 | Session 3        |          |
+16:00 - 16:30 | 17:00 - 17:30 | Recap of the day |          | Individual Sites
 {:.table.table-striped}
 
 
@@ -104,11 +111,11 @@ A **social dinner** will be organised at each site on Tuesday October 8th. This 
 
 This will be a **hybrid training**. This means the instructors will teach in front of a camera, and this video feed is live-streamed to multiple locations around the world. Each location will have several other instructors and helpers on site to answer questions and who can take over teaching in case this is needed.
 
-We will use [a collaborative document (FIXME)](https://drive.google.com/open?id=1tN247JWpkpPl7FvEN9gsBcmVlZfRF_B0gnEWb5L3tMc) for asking and answering questions during the workshop. This document also contains links to all other materials you will need during the course.
+We will use [a collaborative document]({{ page.collaborative_doc }}) for asking and answering questions during the workshop. This document also contains links to all other materials you will need during the course.
 
 # Preparation
 
-The workshop will use the [European Galaxy server](https://usegalaxy.eu) to perform all data analysis. Please register there ahead of time to streamline the training.
+The workshop will use the [{{ page.galaxy_name }}]({{ page.galaxy_url }}) to perform all data analysis. Please register there ahead of time to streamline the training.
 
 You must go through two Galaxy interactive tours before beginning the training.
 These interactive tours guide you stepwise through the Galaxy user interface
@@ -120,18 +127,23 @@ ensure everyone has a basic understanding of how Galaxy works.
 
 # Venues
 
-This workshop will be offered in parallel in multiple locations:
+This workshop will be offered in parallel in these locations:
 
-## FIXME
+{% for location in page.locations %}
 
-{% assign loc = page.locations | where:"city", "Rotterdam" | first %}
-{% include map.html location=loc showmap=true zoomlevel=15 hidepopup=true %}
+## {{ location.name }}
 
-The workhop will be held in room 1528 on the 15th floor of the Ee building. Computers are provided in this room. To enter the building you will need to pick up a visitors pass that will be waiting for you at the reception of the Ee building (3rd floor).
+{% include map.html location=location showmap=true zoomlevel=15 hidepopup=true %}
+
+{{ location.instructions }}
+
+{% endfor %}
 
 # Organizers, instructors and helpers
 
-- FIXME
+{% for organiser in page.organisers %}
+- {{ organiser }}
+{% endfor %}
 
 The team will be also instructors and helpers there, in addition to local helpers.
 
@@ -139,4 +151,6 @@ The team will be also instructors and helpers there, in addition to local helper
 
 This event is made possible thanks to our supporting partners:
 
-- FIXME
+{% for sponsor in page.sponsors %}
+- {{ sponsor }}
+{% endfor %}
