@@ -1,12 +1,12 @@
 # Site
-title: "Gallantries"
+title: "Gallantries Workshop"
 description: >
   When Galaxy meets Carpentries to develop and deliver open training in life sciences
 logo: 'assets/images/gallantries-logo-with-word-inverted-large.svg'
 paginate: 12
-email: 'shiltemann@gmail.com'
-repository: galaxy-carpentries/gallantries
-gitter: galaxy-carpentries/community
+email: 'fixme@example.com'
+repository: fixme
+gitter: fixme
 
 # Plugins
 plugins:
