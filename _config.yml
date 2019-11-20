@@ -4,9 +4,6 @@ description: >
   When Galaxy meets Carpentries to develop and deliver open training in life sciences
 logo: 'assets/images/gallantries-logo-with-word-inverted-large.svg'
 paginate: 12
-email: 'fixme@example.com'
-repository: fixme
-gitter: fixme
 
 # Plugins
 plugins:
